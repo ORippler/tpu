@@ -65,9 +65,10 @@ class SegmentationModel(base_model.BaseModel):
       # Override the desired level with fused feature.
       fpn_features[self._level] = fused_feat
 
-    logits = self._head_fn(fpn_features, is_training=is_training)
+    logits, features = self._head_fn(fpn_features, is_training=is_training)
     outputs = {
         'logits': logits,
+        "features": features
     }
 
     return outputs
