@@ -33,7 +33,7 @@ import six
 from six.moves import xrange
 import tensorflow.compat.v1 as tf
 
-import utils
+import efficientnet_utils as utils
 from condconv import condconv_layers
 
 GlobalParams = collections.namedtuple('GlobalParams', [
